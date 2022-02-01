@@ -19,9 +19,13 @@ for (let i=0;i<numbers.length;i++)
 for (let j=0;j<numbers[i].length;j++)
 {
 //console.log(numbers[i].length);
-console.log(numbers[i][j]);
+if (numbers[i][j]%2==0)
+{
+  numbers[i][j] = 'even';
 }
-
-}
-
+else if (numbers[i][j]%2==1)
+{
+  numbers[i][j] = 'odd';
+}}
+console.log(numbers[i]);} // 2d loops inserting odd/even whiel iterating through the array
 
