@@ -11,8 +11,28 @@ let stations = [
 ]
 
 
-function chooseStations(argument){
+function chooseStations(stations) {
+const goodStations = [];
 
+for (const station of stations) {
+  const capacity = station[1];
+  if (capacity >= 20) {
+    const type=station[2]
+    if (type === 'school' || type === 'community centre') {
+    goodStations.push(station[0]) }
+   }
+  }
+
+  return goodStations;
+} 
+
+
+
+
+
+
+
+  /*
   let votingStations = [];
   let capacityIndex = 1;
   let categoryIndex = 2;
@@ -20,17 +40,16 @@ function chooseStations(argument){
 
   for (let i = 0; i < argument.length; i++)
   {
-    if (argument[i][capacityIndex] > 20)
+    if (argument[i][categoryIndex] === 'school' || argument[i][categoryIndex] === 'community centre')
+      if (argument[i][capacityIndex] > 20)
       {
-      if (argument[i][categoryIndex] === 'school' || argument[i][categoryIndex] === 'community centre')
         
         { votingStations.push(argument[i][locationIndex]); }
-    }
+      }
 
   }
 
-  return votingStations;
-}
+  return votingStations;}*/
 
 let result = chooseStations(stations);
 console.log(result);
