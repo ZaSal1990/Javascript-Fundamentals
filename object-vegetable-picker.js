@@ -24,33 +24,36 @@ const vegetables = [
 
 function judgeVegetable (vegetables,metric)
 {
+    return   vegetables.reduce( (winner, contestant) =>
+                            contestant[metric] > winner[metric] ? contestant : winner).submitter
+  }
+  /*
   let dataStorage;
-  let maxSubmitter;
-if (metric === 'redness')
-{
-  dataStorage = vegetables.map(item=>{return item.redness;})
-  console.log(dataStorage);
-  let maxRanking=Math.max(...dataStorage)
-  maxSubmitter=vegetables.map(element=>{ if (element.redness === maxRanking) return element.submitter});
-}
-else if (metric === 'plumpness')
-{
-  dataStorage = vegetables.map(item=>{return item.plumpness;})
-  console.log(dataStorage);
-  let maxRanking=Math.max(...dataStorage)
-  maxSubmitter=vegetables.map(element=>{ if (element.plumpness === maxRanking) return element.submitter});
-}
+  let highestranking;
+  let result;
 
-maxSubmitter=maxSubmitter.filter(truthy=>truthy != undefined);
-return maxSubmitter;
-
-}
-
-console.log(judgeVegetable(vegetables,'plumpness'))
-
-
+  if (metric === 'redness')
+  {
+    highestranking = vegetables.map(item => item.redness);
+    highestRanking = highestranking.reduce((acc, val) => { return acc > val ? acc : val});
+    for (const iterator in vegetables)
+    { dataStorage = vegetables[iterator];
+      if (dataStorage.redness === highestRanking)
+      return dataStorage.submitter;
+    } 
+  }
+  else if (metric === 'plumpness')
+  {
+    highestranking = vegetables.map(item => item.plumpness);
+    highestRanking = highestranking.reduce((acc, val) => { return acc > val ? acc : val});
+    for (const iterator in vegetables)
+    { dataStorage = vegetables[iterator];
+      if (dataStorage.plumpness === highestRanking)
+      return dataStorage.submitter; }
+  } */
 
 
-
+//console.log(judgeVegetable(vegetables,'plumpness'));
+console.log(judgeVegetable(vegetables,'plumpness'));
 
 
